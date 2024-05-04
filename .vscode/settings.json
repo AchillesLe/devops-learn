@@ -1,0 +1,10 @@
+{
+    "[terraform]": {
+        "editor.defaultFormatter": "hashicorp.terraform",
+        "editor.tabSize": 2,
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": false
+    }
+}
