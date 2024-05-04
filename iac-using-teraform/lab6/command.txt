@@ -1,0 +1,6 @@
+https://developer.hashicorp.com/terraform/tutorials/oci-get-started/oci-variables
++ chỉ định file biến môi trường:
+
+terraform plan --var-file "terraform-dev.tfvars"
+terraform apply --var-file "terraform-dev.tfvars"
+terraform destroy --var-file "terraform-dev.tfvars"
