@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        main h1 {
+            margin-top: 20px;
+        }
+
+        main form {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main form input {
+            padding: 4px;
+            border-radius: 4px;
+            outline: 1px #a0612a;
+        }
+
+        main form button {
+            margin: 10px auto;
+            padding: 8px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <main class="main">
+        <h1 id="welcome" style="color: #83613E;">Login form</h1>
+
+        <form action="/api/login" method="post">
+            <label for="username">username</label>
+            <input type="text" name="username" id="username">
+            <br>
+
+            <label for="password">password</label>
+            <input type="text" name="password" id="password">
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>

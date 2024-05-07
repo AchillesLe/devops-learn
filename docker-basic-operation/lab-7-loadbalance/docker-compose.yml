@@ -1,0 +1,45 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./web
+    ports:
+      - 3000
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./web:/app
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: any
+    networks:
+    - mynetwork
+  nginx:
+    image: nginx
+    restart: "always"
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - web
+    networks:
+      - mynetwork
+  cache:
+    image: redis:alpine
+    ports:
+      - 6380:6379
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Bao@2022
+      - MYSQL_DATABASE=testdb
+    volumes:
+      - ./db:/var/lib/mysql
+    ports:
+      - 3309:3306
+volumes:
+  db:
+networks:
+  mynetwork:
