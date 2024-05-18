@@ -7,6 +7,7 @@ const fs = require('fs');
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
+  console.log('host.docker.internal', hostname);
   res.sendFile(__dirname + '/public/index.html');
 })
 
@@ -35,15 +36,15 @@ app.listen(port, () => {
   console.log(`server is running on port ${port}`);
 })
 
-// function sleep(ms) { 
-//   return new Promise((resolve) => setTimeout(resolve, ms))
-// }
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
 
-// async function main() {
-//   console.log("before sleep");
-//   await sleep(15000)
-//   console.log("after sleep")
-//   process.exit()
-// }
+async function main() {
+  console.log("before sleep");
+  await sleep(15000)
+  console.log("after sleep")
+  process.exit(101)
+}
 
-// main();
+main();
