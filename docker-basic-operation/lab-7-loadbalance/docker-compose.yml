@@ -27,19 +27,17 @@ services:
       - web
     networks:
       - mynetwork
-  cache:
-    image: redis:alpine
-    ports:
-      - 6380:6379
-  db:
-    image: mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=Bao@2022
-      - MYSQL_DATABASE=testdb
-    volumes:
-      - ./db:/var/lib/mysql
-    ports:
-      - 3309:3306
+  # cache:
+  #   image: redis:alpine
+  #   ports:
+  #     - 6380:6379
+  # db:
+  #   image: mysql
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=Bao@2022
+  #     - MYSQL_DATABASE=testdb
+  #   ports:
+  #     - 3309:3306
 volumes:
   db:
 networks:
