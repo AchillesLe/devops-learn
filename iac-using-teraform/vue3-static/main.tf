@@ -68,8 +68,14 @@ resource "aws_cloudfront_distribution" "vue3_static_website" {
 
   restrictions {
     geo_restriction {
-      restriction_type = "none"
+      restriction_type = "whitelist"
+      locations        = ["SG", "VN", "TH", "ID", "MY", "PH", "CN", "JP", "KR", "IN", "HK", "TW"]
     }
+  }
+
+  logging_config {
+    include_cookies = false
+    bucket          = ""
   }
 
   tags = {
