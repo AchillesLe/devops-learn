@@ -1,0 +1,30 @@
+I want to create Terraform files to deploy a Docker application on AWS ECS using my Docker Hub image. Specifically, I need the following:
+
+1. **A `main.tf` file** to initialize and run the Terraform configuration.
+   - **ECS Cluster** using EC2 Launch Type with a `t3.micro` instance.
+   - **ECS Task Definition** to run the Docker container from Docker Hub (I will provide my Docker Hub username and password).
+   - **ECS Service** to run the container in the ECS Cluster.
+   - **Security Group** to allow HTTP access (port 3000) to the container.
+   - **IAM Role** for the ECS task with necessary permissions.
+
+3. Use the AWS profile `yuri` for AWS authentication.
+
+### Structure of the Terraform files:
+1. **main.tf**:
+   - Initializes the AWS provider using the profile `yuri`.
+   - Initializes the resource files for ECS, Task Definition, Service, Security Group, and IAM Role.
+2. **variables.tf**:
+   - Defines the variables
+
+Note: I will provide my Docker Hub password as variables, use default vpc
+Docker Hub username: Yuri7030
+Docker Hub password: [Provide your password]
+Docker Image Name: user-todo:v1
+Region: ap-southeast-1
+Profile: yuri
+
+Please generate the Terraform code for all these resources and make sure to use the `yuri` AWS profile for authentication.
+
+I would like retrieve url api to access
+
+Yuriboyka@7030
